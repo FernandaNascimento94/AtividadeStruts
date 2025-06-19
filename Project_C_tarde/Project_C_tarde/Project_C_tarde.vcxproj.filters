@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Exercicio_1.c" />
+    <ClCompile Include="Exercicio_2.c" />
+    <ClCompile Include="Exercicio_3.c" />
+    <ClCompile Include="Exercicio_4.c" />
+    <ClCompile Include="Exercicio_5.c" />
+    <ClCompile Include="Exercicio_6.c" />
+    <ClCompile Include="Exercicio_7.c" />
+    <ClCompile Include="Exercicio_8.c" />
+    <ClCompile Include="Exercicio_9.c" />
+    <ClCompile Include="Exercicio_10.c" />
+    <ClCompile Include="Exercicio_11.c" />
+  </ItemGroup>
+</Project>
