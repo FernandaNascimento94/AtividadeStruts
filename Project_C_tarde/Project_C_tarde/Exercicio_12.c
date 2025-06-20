@@ -283,6 +283,8 @@ void carregarVendasDoArquivo()
 int main()
 {
 	frutas = (Fruta*)malloc(sizeof(Fruta));
+	compras = (Compra*)malloc(sizeof(Compra));
+	vendas = (Venda*)malloc(sizeof(Venda));
 
 	int rodando = 1;
 	int option = 0;
