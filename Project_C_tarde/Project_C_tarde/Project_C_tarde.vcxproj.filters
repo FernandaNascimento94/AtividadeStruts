@@ -12,5 +12,7 @@
     <ClCompile Include="Exercicio_9.c" />
     <ClCompile Include="Exercicio_10.c" />
     <ClCompile Include="Exercicio_11.c" />
+    <ClCompile Include="Exercicio_11_Professor.c" />
+    <ClCompile Include="Exercicio_12.c" />
   </ItemGroup>
 </Project>
