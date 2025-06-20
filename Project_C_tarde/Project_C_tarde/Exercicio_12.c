@@ -41,20 +41,20 @@ void adicionarFruta()
 
 	printf("Digite o nome da fruta: ");
 	InputStatus = scanf_s("%s", fruta.nome, 30);
-	if (InputStatus == EOF) { printf("ERRO - Falha na inserção de dados\n"); return; }
+	if (InputStatus == EOF) { printf("ERRO - Falha na inserÃ§Ã£o de dados\n"); return; }
 
-	printf("Digite o preço de compra da fruta: ");
+	printf("Digite o preÃ§o de compra da fruta: ");
 	InputStatus = scanf_s("%f", &fruta.precoCompra);
-	if (InputStatus == EOF) { printf("ERRO - Falha na inserção de dados\n"); return; }
+	if (InputStatus == EOF) { printf("ERRO - Falha na inserÃ§Ã£o de dados\n"); return; }
 
-	printf("Digite o preço de venda da fruta: ");
+	printf("Digite o preÃ§o de venda da fruta: ");
 	InputStatus = scanf_s("%f", &fruta.precoVenda);
-	if (InputStatus == EOF) { printf("ERRO - Falha na inserção de dados\n"); return; }
+	if (InputStatus == EOF) { printf("ERRO - Falha na inserÃ§Ã£o de dados\n"); return; }
 
 	if (quantidadeFrutas > 0)
 	{
-		//Realocando todas as listas em variáveis temporárias...
-		//verificando as listas pra evitar tentar inserir dados em listas inválidas.		
+		//Realocando todas as listas em variÃ¡veis temporÃ¡rias...
+		//verificando as listas pra evitar tentar inserir dados em listas invÃ¡lidas.		
 		Fruta* bufferFrutas = (Fruta*)realloc(frutas, (quantidadeFrutas + 1) * sizeof(Fruta));
 		if (bufferFrutas == NULL) { printf("Deu ruim!"); return; }
 		frutas = bufferFrutas;
@@ -132,19 +132,19 @@ void comprar()
 
 	printf("Digite o id da fruta a ser comprada:\n");
 	InputStatus = scanf_s("%d", &compra.idFruta);
-	if (InputStatus == EOF) { printf("ERRO - Falha na inserção de dados\n"); return; }
+	if (InputStatus == EOF) { printf("ERRO - Falha na inserÃ§Ã£o de dados\n"); return; }
 
 	printf("Digite a quantidade a ser comprada:\n");
 	InputStatus = scanf_s("%d", &compra.quantidade);
-	if (InputStatus == EOF) { printf("ERRO - Falha na inserção de dados\n"); return; }
+	if (InputStatus == EOF) { printf("ERRO - Falha na inserÃ§Ã£o de dados\n"); return; }
 
-	printf("Digite o valor de desconto (ou 0 se não foi condedido desconto):\n");
+	printf("Digite o valor de desconto (ou 0 se nÃ£o foi condedido desconto):\n");
 	InputStatus = scanf_s("%f", &compra.desconto);
-	if (InputStatus == EOF) { printf("ERRO - Falha na inserção de dados\n"); return; }
+	if (InputStatus == EOF) { printf("ERRO - Falha na inserÃ§Ã£o de dados\n"); return; }
 
-	if (!frutaValida(compra.idFruta)) { printf("ERRO: Não existe fruta cadastrada com o id fornecido!"); return; }
-	if (compra.quantidade <= 0) { printf("ERRO: quantidade inválida.");		return; }
-	if (compra.desconto < 0) { printf("ERRO: desconto inválido."); return; }
+	if (!frutaValida(compra.idFruta)) { printf("ERRO: NÃ£o existe fruta cadastrada com o id fornecido!"); return; }
+	if (compra.quantidade <= 0) { printf("ERRO: quantidade invÃ¡lida.");		return; }
+	if (compra.desconto < 0) { printf("ERRO: desconto invÃ¡lido."); return; }
 
 	if (quantidadeCompras > 0)
 	{
@@ -175,12 +175,12 @@ void vender()
 	InputStatus = scanf_s("%d", &venda.quantidade);
 
 
-	printf("Digite o valor de desconto (ou 0 se não foi condedido desconto):\n");
+	printf("Digite o valor de desconto (ou 0 se nÃ£o foi condedido desconto):\n");
 	InputStatus = scanf_s("%f", &venda.desconto);
 
-	if (!frutaValida(venda.idFruta)) { printf("ERRO: Não existe fruta cadastrada com o id fornecido!"); return; }
-	if (venda.quantidade <= 0) { printf("ERRO: quantidade inválida.");		return; }
-	if (venda.desconto < 0) { printf("ERRO: desconto inválido."); return; }
+	if (!frutaValida(venda.idFruta)) { printf("ERRO: NÃ£o existe fruta cadastrada com o id fornecido!"); return; }
+	if (venda.quantidade <= 0) { printf("ERRO: quantidade invÃ¡lida.");		return; }
+	if (venda.desconto < 0) { printf("ERRO: desconto invÃ¡lido."); return; }
 
 	if (quantidadeVendas > 0)
 	{
@@ -298,7 +298,7 @@ int main()
 		printf("5 - Sair\n");
 
 		int inputStatus = scanf("%d", &option);
-		if (inputStatus == EOF) { printf("ERRO - Falha ao tentar selecionar opção..."); return 1; }
+		if (inputStatus == EOF) { printf("ERRO - Falha ao tentar selecionar opÃ§Ã£o..."); return 1; }
 
 		if (option == 1) adicionarFruta();
 		if (option == 2) comprar();
@@ -307,6 +307,8 @@ int main()
 		if (option == 5) rodando = 0;
 
 		carregarFrutasDoArquivo();
+		carregarComprasDoArquivo();
+		carregarVendasDoArquivo();
 	}
 	return 0;
 }
